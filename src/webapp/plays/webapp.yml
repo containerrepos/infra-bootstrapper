@@ -1,0 +1,76 @@
+---
+- hosts: 
+   - all
+  vars_files: 
+   - /etc/csp/boot_config/metadata.json
+  vars:
+  # image_path: "https://hub.docker.com/orgs/"
+   image_tag: "master_1"
+  pre_tasks:
+   - name: vars from metadata
+     set_fact: vm_role={{ meta.vm_role }}  
+  roles:
+   - {  role: /home/centos/docker-ansible/src/webapp/roles/appservices, when: (vm_role == 'lbserver' or vm_role == 'appserver') }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+#- hosts: localhost
+#  become: yes
+#  vars_files:
+#     - /home/centos/meta_data.json
+#  vars_files:
+#    - "/home/centos/Configuration_Manager/src/plays/meta_data.yml"
+# vars_files:  /home/centos/Configuration_Manager/src/plays/meta_data.txt
+#  roles:
+#   - {  role: /home/centos/Configuration_Manager/src/roles/webserver, when: meta.server_role == 'web' }
+#   - {  role: /home/centos/Configuration_Manager/src/roles/appserver, when: vm_role == 'app' }
+#   - { role: /home/centos/Configuration_Manager/src/roles/krishna.mysql, when: server_role == 'db' }
+#    - { role: /home/centos/Configuration_Manager/src/roles/krishna-mysql, when: server_role == 'db' }
+#      become: yes
+
+
+
+#---
+#- hosts:
+  #  - all
+  # become: yes
+  #roles:
+  #  - role : webserver
+
+
+
+
+
+
+
+
+
+
+#- hosts: dbserver
+#  roles:
+#    - role: geerlingguy.mysql
+#    - role: krishna-mysql
+#      become: yes

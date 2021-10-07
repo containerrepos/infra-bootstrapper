@@ -1,0 +1,7 @@
+---
+- name: include appserver specific varibales
+  include_vars: "appserver.yml"
+  tags: installation
+
+- name: run appserver service
+  command: "sudo docker run -it -d --name appserver {{ image_name }}"
