@@ -1,4 +1,0 @@
-- hosts: appserver
-  roles:
-    - role: appserver
-      become: yes
