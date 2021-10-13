@@ -1,1 +1,3 @@
-# conf-ansible
+
+
+$ansible-playbook plays/cicd.yml
