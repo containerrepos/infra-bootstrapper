@@ -1,7 +1,0 @@
----
-- name: include lbserver specific varibales
-  include_vars: "lbserver.yml"
-#  tags: installation
-
-- name: run lbserver service
-  command: sudo  docker run -it -d  {{ image_name }}
