@@ -1,10 +1,10 @@
 
-$git clone https://github.com/containerrepos/ansible.git
+$git clone https://github.com/containerrepos/infra-bootstrapper.git
 
-$cd ansible
+$cd infra-bootstrapper
 
-$ansible-playbook plays/cicd.yml
+$ansible-playbook plays/webserver.yml
 
-$docker image build -t my .
+$docker image build -t mywebserver .
 
-$docker container run -it --net=host -v /root/.ssh:/hostssh my
+$docker container run -it --net=host -v /root/.ssh:/hostssh mywebserver
